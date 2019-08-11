@@ -1,0 +1,32 @@
+ASSIGNMENT 5
+ROLL NO : 160050034
+
+TASK 3)
+
+Hyperparameters used : 
+
+for ridge_regression:
+	max_iter=30000 
+	lr=0.00001 
+	epsilon = 1e-4
+	lambda = 13
+	k for k-fold cross-validation = 6
+	test_sse_obtained = 540108927476.14105
+
+for lasso_regression: 
+	max_iter=1000 
+	lambda = 350000
+	k for k-fold cross-validation = 6
+	test_sse_obtained = 533781043503.4469
+
+Using the plot we can see the minima of the graph and by continuously changing values of lambda by decreasing the range we can fine-tune our parameter
+lambda. The curve gives the optimum value of the hyperparameter lambda. Before the minima point, sse decreases since model is generalised and is not trained enough to make accurate predictions. After a certain point, the model starts overfitting and hence sse starts increasing. Thus this is the point for optimal tuning of the hyperparameter lambda.
+
+Task 5)
+
+We observe that the solution of lasso is more sparse(i.e. weight matrix has more frequent zeroes) than ridge regression. However, the value of SSE for lasso as well as ridge regression is almost the same, or atleast comparable.
+
+This is because the contour of lambda*||w|| contour is more likely to touch the contour of sse term in the objective function on the axis(since contour for lasso will be hypercubes centered at origin while for ridge will be circles centered at origin). And since we know minima will lie on the point where these two contours touch since traversing on either contour from this point will increase the objective function. So the weight matrix (i.e our solution) will have more zeroes corresponding to the axis points. 
+
+The lasso regression is advantageous compared to ridge since it overcomes the disadvantage of Ridge regression by not only punishing high values of the coefficients but actually setting them to zero if they are not relevant. Hence it serves as feature selector and helps us in selecting relevant features while giving almost the same sse as ridge regression using such features for a dataset to enhance the prediction accuracy as well as generalisation of our model.
+

@@ -1,0 +1,14 @@
+
+ASSIGNMENT 6)
+
+
+Task 3)
+
+path.png :
+
+In path.png on running with p=0.2, we see that the number of moves required to reach the start state have increased than the
+optimal number of moves required. This is the because agent once moved to a new state which is not deterministic anymore needs to again choose stochastically which state to go to next. Hence it is not always that the agent goes in the right direction.
+
+plot.png :
+
+Number of moves required to reach the end state decrease as the value of p increases. This is because as p increases, there is more chance of agent moving in optimal direction than when p was less. Finally at p=1 we have the number of moves at the optimal level.

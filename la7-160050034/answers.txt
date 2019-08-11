@@ -1,0 +1,25 @@
+ASSIGNMENT 7
+
+ROLL NO : 160050034
+
+TASK 3)
+
+One possible but impractical consistent heurestic can be optimal goal distance from that state which is an irrelevant heurestic since we dont know the optimal path distance yet.
+
+For a problem such as Sudoku, differentiating between two states in the frontier, only one of which may lead to an optimal solution is not possible through a heuristic. We can only know if a state leads to wrong solution when we expand it and reach an incorrect terminal state. Therefore, A* search would not help in this matter.
+
+
+TASK 7)
+
+(a) Running djkshtra algorithm is same as running the algorithm without any heurestic as we did in Task 5. So the number of nodes expanded will be:
+
+	Number of nodes expanded for IIT: 80                                                                                   
+	Number of nodes expanded for IIT: 26743
+
+	which are significantly reduced when we also have a valid heurestic for our problem:
+
+	Number of nodes expanded for IIT: 21                                                                                   
+	Number of nodes expanded for Mumbai: 13048 
+
+(b) Since travelling salesman problem is NP we cannot find an exact heurestic to solve the problem efficiently. 
+	But one of the heurestic can be the straight line distance between the current node and the nearest of the final nodes. Note that this heurestic is consistent since assume that this distance is c (and hence h(n) = c) and suppose that the cost to the next node is x and the heurestic function at that node is h(n1) (which is basically the straight line distance of that node to the final node). Now using vectors, we see that h(n) <= h(n1) + c which is the definition of a consistent heurestic.

@@ -1,0 +1,67 @@
+Roll No : 160050034
+
+------------------------
+Assignment 1
+------------------------
+
+Task 2:
+	
+	Subtask 1) : The x-axis shows number of data points seen by the perceptron along 3 iterations of training data set. The training accuracy will first increase because the perceptron can fit it's linearly seperable model for less number of points(and same goes for the test accuracy) but as the data points increases, the further classification can be wrong or right depending upon the data it encounters. Hence the accuracy starts fluctuating since each data point changes perceptron according to itself which may further result in misclassification of earlier correctly classified points.
+	As for the test accuracy graph, we can say that the test accuracy remains below the training accuracy since the model's training accuracy is defined by the already seen points while test points are new to the model while model has fitted the training points to the best extent possible. 
+
+
+	Subtask 2) : The plot has training data size on the x-axis as variable while test data size remains same. The training accuracy is high when the number of the training data points are small because the perceptron develops a reasonable linearly seperable model to fit the data even if the data is non linearly seperable. The test accuracy for small training data size will start from nearly zero since initially the model will be almost an untrained model and hence it will misclassify most of the points in the test data. But as the training data set size increases the model gets trained better and better and starts predicting the test data results correctly. While as the size of the training data set increases the training accuracy begins to fall since now it becomes difficult to fit a linearly seperable model for data which can be non linearly seperable. Hence more and more of the earlier trained points are incorrectly classified when a new data point is encountered for training.
+
+		(1) The classifier will predict randomly and will never change the prediction once made since it does not undergo training.
+			The expected accuracy of such a classifier will be 50% (if the classifier is bimary).
+
+
+Task 3:
+    ---------------------------------------------------------
+    python dataClassifier.py -c 1vr -t 800 -s 8000
+	5706 correct out of 8000 (71.3%).  
+	---------------------------------------------------------
+
+	---------------------------------------------------------
+	python dataClassifier.py -c 1v1 -t 800 -s 8000  
+	5724 correct out of 8000 (71.5%). 
+	---------------------------------------------------------
+
+	On running on small data set, 1v1 and 1vr behave almost similarly since both can approximate linear model for small data which although can be linearly unseperable.
+
+	---------------------------------------------------------
+	python dataClassifier.py -c 1vr -t 80000 -s 20000
+	14752 correct out of 20000 (73.8%). 
+	---------------------------------------------------------
+
+	---------------------------------------------------------
+	python dataClassifier.py -c 1v1 -t 80000 -s 20000
+	15766 correct out of 20000 (78.8%). 
+	---------------------------------------------------------
+
+	On large dataset, 1v1 will make better hyperplanes for seperating 2 classes which are linearly seperable while each 1vr classifier considers only 1 class against the rest and tries to draw a cummulative boundary which may not be a good estimate as it doesn't take into account the other classes. Hence 1v1 has a higher accuracy for this hypercube type dataset.
+
+
+
+
+Task 4:
+	## 
+    # I have defined 4 features:
+    #
+    # Feature[0]: vertices: this feature counts the number of vertex points by seeing 8 nearest neighbours of any interior
+    #                       point and whether the count of the non-interior points exceed a certain threshold for it to be vertex
+
+    # Feature[1]: hedge+vedge : I have used two edge detection filters for this feature [-1 0 1] for vertical edge and [-1 0 1]T
+    #                           for horizontal edge and then returned the sum of the two edge points as a feature
+    
+    # Feature[2]: tot : Area of the shape (number of interior points)
+    #
+
+    # Feature[3]: dim : This feature is the number of interior points along two lines where one line is a vertical line passing 
+    #                   through the center of the figure and another line is a horizontal line passing through the center of the
+    #                   figure. 
+    ##
+
+
+
+

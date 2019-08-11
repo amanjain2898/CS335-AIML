@@ -1,0 +1,43 @@
+ASSIGNMENT 8:
+
+Roll No: 160050034
+
+----------------------------------------------------------------------------------
+Task 4)
+
+Comparison of task2_submit.png, task3_submit.png and task4_submit.png:
+
+Initial Cost (2 vs 3 vs 4): 3000(high) vs 820 vs 820
+Number of Iterations to converge (2 vs 3 vs 4): 60-70(high) vs (sometimes less and sometimes more) vs 15
+
+
+The random initialisation(in task2) is the worst since initialisation plays a major role and if it is random then no heurestic is developed and 
+the hill climbing algorithm is getting stuck in local minima since we know that the value it is converging to with the 5 seeds is not minimum of the tour length. 
+
+In task3(nearest neighbour) and task4(euclidean) we can see that nearest neighbour converges at a very bad value of tour length when starting city is equal to 3 but can even converge to the best among all three when starting city is 2. The euclidean mst method works on an average best among all three since the value at which it converges is atmost twice the length of the actual optimal tour.
+
+In terms of time taken, we can see that random initialisation converges at 60 iterations while both euclidean and nearest neighbour are converging at 15 iterations or so.
+
+So while random initialisation is worse in almost every scenario than the euclidean and nearest neighbour (initial cost, number of iterations, convergence value) , we cannot compare between the nearest neighbour and euclidean approaches. Both can give results better than the other depending on
+the initial value of the start city. 
+
+----------------------------------------------------------------------------------
+Task 6)
+
+Comparison of task2_submit.png and task6_submit.png:
+
+Due to the random initialisation, there is no significant difference in the 2opt and 2opt+3opt cases. We observe that the number of iterations required to converge are almost the same (60-70), the value at which they converge are also the same and the initial cost is same too. So using 3opt increases computational complexity but does not increase the result accuracy. 
+
+
+Comparison of task3_submit.png and task7_submit.png:
+
+First observe that the initial cost is same for both 2opt and 2opt+3opt strategy which is logical. Also the value at which convergence happens is also the same and hence adding 3opt neighbours do not help to escape local minima in this case. What is interesting to observe is that the 2opt+3opt strategy converges fast which can be attributed to the fact that 2opt+3opt strategy explores more space(more number of neighbours are present) and hence reaches the minima faster. 
+
+
+Comparison of task4_submit.png and task8_submit.png:
+
+Amongst the two, we observe that 3opt+2opt converges to a better solution in almost the same number of iterations than just using 2opt. We can compare both the optimal value of 3opt+2opt (~700) with that obtained using just 2opt(720) along with the iterations (~15 vs ~14) which clearly indicate that 3opt+2opt is a better method than just using 2opt. This may be due to the fact that a larger number of neighbours of a tour are considered in 3opt+2opt due to which it is more likely to take a step towards the minima and avoid getting stuck in a local minima as compared to just using 2opt.
+
+
+---------------------------------------------------------------------------------- 
+

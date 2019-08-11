@@ -1,0 +1,52 @@
+
+ASSIGNMENT 3
+Roll No - 160050034
+
+
+Task 4)  
+	
+	First thing to conclude immediately is that where a single perceptron was giving an accuracy of 67.8%, by using bagging and boosting techniques
+	and training for the same number of iterations, accuracy easily exceeded 75%.
+
+
+	Description of the plot:
+
+		Baggging :  Train accuracy is above on both of test and validation accuracy since it is measured on the already seen points. Now
+		as the number of classifiers increases, accuracy(test,train and validation) increase since data gets fitted better by more number of learners.
+		But, after a point(16 classifiers in this case) the accuracies start falling since due to split dataset gets smaller and smaller and after a
+		point it does not remain a good representative of the original training data.
+
+
+		Boosting: Training accuracy increases with number of classifiers. But at large number of classifiers training data starts getting overfitted
+		and hence test and validation accuracy starts falling. Here the data is not getting split so it remains a good representative of the whole set
+		and hence training accuracy starts saturating. 
+		Also in boosting on varying the number of data points for sampling for training of perceptron, we see the following changes:
+
+		On ratio = 0.5 : testing accuracy : 75.5% 
+		On ratio = 1.0 : testing accuracy : 74.7%
+		On ratio = 1.5 : testing accuracy : 75.1%
+
+		The possible explanation for the above behaviour is that as you increase the size if the sampling data set, it becomes a better representative
+		of the training set since if ratio = 1 then we have 63% of chance that a point will be present in a dataset which increases if we increase the number of elements in the sampling set. And if the ratio < 1 then possibility is that the model is getting better trained for smaller dataset
+		but if we train the ensembling model for several iterations, then my guess is that the one with bigger ratio will do better in terms of accuracy.
+
+
+
+	Subtask 1)  
+
+	Training accuracy for Bagging  : 91.2 % (Ratio of sample = 1)
+
+	Training accuracy for Boosting : 89.4 % ( Ratio of sample = 1.5)
+
+	Here bagging is giving higher training accuracy but this does not mean that this always hold since we have can select number of hypothesis as a parameter for sample data set in boosting which may give higher accuracy. Bagging parameter is M(the number of classifiers) and ratio(division of dataset) which can also be modified to give better or worse result than this.
+
+
+
+
+	Subtask 2)
+
+	True. An ensembling model with perceptron as weak learner can draw boundaries with multiple lines to classify points enclosed whereas a perceptron
+	can only draw a hyperplane between two points.
+
+	Eg:  consider area enclosed by lines x+y=1, x+y=-1,x-y=1, x-y=-1 containing positive points and outside the area containing negative points.
+	A single perceptron can never classify such points correctly. Infact ensembling methods can achieve 100% accuracy on most data sets(since if base learner achieves a greater accuracy then 0.5 then the ensembling model is bound to give 100% accuracy for large training iterations). 

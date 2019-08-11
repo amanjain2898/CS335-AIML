@@ -1,0 +1,4 @@
+
+
+For reading a .pgm file:
+	https://stackoverflow.com/questions/35723865/read-a-pgm-file-in-python?rq=1

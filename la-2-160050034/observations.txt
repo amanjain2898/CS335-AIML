@@ -1,0 +1,68 @@
+OBSERVATIONS 
+
+----------------------------------------------------------------------------------------------------------------------------
+Task 2.1)  XOR DATA SET : 
+
+Neural Net Architecture:
+
+nn1 = nn.NeuralNetwork(2, 0.1, 2, 30)
+nn1.addLayer(FullyConnectedLayer(2,3))
+nn1.addLayer(FullyConnectedLayer(3,2))
+
+seed_value = 5
+(learning rate, number of hidden layers, number of nodes in hidden layer, batchsize, number_of_epochs) = (0.1,1,3,10,30)
+
+I have used 1 hidden fully connected layer with 3 neurons and seed 5 which is giving an accuracy > 90%. Since the dataset is not linearly seperable
+atleast one hidden layer will be required, and this is minimal as I observed by varying the number of nodes. However, by varying seed this network
+doesn't give a consistent accuracy > 90% and hence I have kept hidden layer nodes 5. 
+
+----------------------------------------------------------------------------------------------------------------------------
+Task 2.2)	SEMI-CIRCLE DATA SET:
+
+Neural Net Architecture:
+
+nn1 = nn.NeuralNetwork(2, 0.1, 10, 10)
+nn1.addLayer(FullyConnectedLayer(2,2))
+nn1.addLayer(FullyConnectedLayer(2,2))
+
+seed_value = 2
+(learning rate, number of hidden layers, number of nodes in hidden layer, batchsize, number_of_epochs) = (0.1,1,2,10,10)
+
+Here also, data is non-linearly seperable and hence more than one hidden layer node will be required. So minimal number of nodes will be 2 which
+give a nice accuracy for many random seeds.
+
+----------------------------------------------------------------------------------------------------------------------------
+Task 2.3)
+
+Neural Net Architecture:
+
+nn1 = nn.NeuralNetwork(10, 0.1, 10, 10)
+nn1.addLayer(FullyConnectedLayer(784,20))
+nn1.addLayer(FullyConnectedLayer(20,10))
+
+seed_value = 5
+(learning rate, number of hidden layers, number of nodes in hidden layer, batchsize, number_of_epochs) = (0.1,1,20,10,10)
+
+The MNIST dataset is again non-seperable linearly so a hidden layer is added. However, the number of nodes in the hidden layer may not be minimal
+as for some small number of nodes, it is completely possible that you give another seed and the model's accuracy shoots up. But 20 is kept as a
+safe number which is giving > 90% accuracy on many seeds.
+
+----------------------------------------------------------------------------------------------------------------------------
+Task 2.4) 
+
+Neural Net Architecture:
+
+nn1 = nn.NeuralNetwork(10, 0.1, 10, 30)
+nn1.addLayer(AvgPoolingLayer([3,32,32],[8,8],8))
+nn1.addLayer(ConvolutionLayer([3,4,4], [2,2], 10, 2))
+nn1.addLayer(FlattenLayer())
+nn1.addLayer(FullyConnectedLayer(40,10))
+
+seed_value = 5
+(learning rate, number of hidden layers, batchsize, number_of_epochs) = (0.1,3,10,20)
+
+I have added one layer of each type so the number of layers is minimal. This could also have been done without adding AvgPooling layer but since
+for bigger datasets, it gives results much faster, I have added it. Also the number of nodes in each layer may not be minimal as it varies with 
+many hperparameters and seed.
+
+----------------------------------------------------------------------------------------------------------------------------
